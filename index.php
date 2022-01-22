@@ -16,14 +16,10 @@
             <div class="jumbotron jumbotron-fluid bg-dark">
                 <div class="text-center text-light bg-dark p-5 display-4">Burger Étterem</div>
             </div>
-        </header>
-
-            
+        </header>    
         <?php
             include_once("navbar.php");
         ?>
-
-
         <div class="clearfix">
             <p>
                 A magas minőségű alapanyagokat magunk dolgozzuk fel, szigorú kontroll alatt, és úgy állítottuk össze, hogy a hozzávalók tökéletes harmóniája fokozza a gasztronómiai élményt. <br>
@@ -80,8 +76,7 @@
                 Te még nem próbáltad a Zing burgert? Akkor legfőbb ideje!
             </p>
         </div>
-
-
+        
         <footer class="page-footer text-center wow fadeIn">
             <div class="py-5 bg-dark">
                 <span class="footer-copyright text-secondary center" id="copyright">© 2022 Copyright:</span>
