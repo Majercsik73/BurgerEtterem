@@ -38,14 +38,14 @@
                 <form action= "">
                 <div>
                     <h2>Kedves <?php echo $_SESSION['Felhasznalonev']?> !</h2>
-                    <h3>Éttermünkben az alábbi foglalásaid voltak korábban:</h3>
+                    <h3>Éttermünkben az alábbi foglalásai voltak korábban:</h3>
                 </div>
                 <br />
                 <div>
                     <table class="table table-dark table-striped">
-                        <thead style="font-weight:bold">
+                        <thead >
                             <tr>
-                                <th>Személyek száma</th>
+                                <th>Vendégek száma</th>
                                 <th>Dátum</th>
                                 <th>Időpont</th>
                                 <th>Foglalás ideje</th>
