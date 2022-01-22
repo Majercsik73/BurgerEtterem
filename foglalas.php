@@ -17,45 +17,31 @@
             {
                 $azon = $_SESSION['Azonosito'];
                 $nev = $_SESSION['Felhasznalonev'];
-                $azon2 = $_POST['azon2'];
                 $szemelydb = $_POST["szemelydb"];
                 $datum = $_POST["datum"];
                 $idopont = $_POST["idopont"];
                 
-                //Személy darabszám ellenőrzés
-                /*$min = 1;
-                $max = 8;
-                if (filter_var($szemelydb, FILTER_VALIDATE_INT, array("options" => array("min_range"=>$min, "max_range"=>$max))) === false)
-                    {
-                        echo "<script>alert('A megadható személyek száma 1 és 8 közötti lehet!')</script>";
-                        header("foglalas.php");
-                    }*/
-
                 //dátum és időpont lekérése ellenőrzéshez
-                $sql5 = "SELECT idopont FROM foglalas WHERE datum = '$datum' AND idopont = '$idopont'";
-                $result5 = $db->query($sql5);
+                $sql1 = "SELECT idopont FROM foglalas WHERE datum = '$datum' AND idopont = '$idopont'";
+                $result1 = $db->query($sql1);
 
                 //dátum és időpont tényleges ellenőrzése
-                if($result5 -> num_rows > 6){
+                if($result1 -> num_rows > 5){
                     echo "<script>alert('Az Ön által megadott időpontra már nem lehetséges foglalás!        Kérjük adjon meg egy másik időpontot!')</script>";
                     echo "<script>location.href='foglalas.php'</script>";
                 }
 
                 //Ha minden rendben, az új foglalást felvesszük a db-be
                 else{   
-                    $sql4 = "INSERT INTO foglalas (fazon, azon, szemelydb, datum, idopont, ido, megjelent) VALUES
+                    $sql2 = "INSERT INTO foglalas (fazon, azon, szemelydb, datum, idopont, ido, megjelent) VALUES
                     (null, '$azon', '$szemelydb', '$datum', '$idopont', now(), 0); ";       
-                    $request4 = $db->query($sql4);
+                    $request2 = $db->query($sql2);
                     echo "<script>alert('Köszönjük a foglalást!')</script>";
                     header("Refresh:0");  // Ne ragadjonak be az adatok!!!!
                     echo "<script>location.href='foglalas.php'</script>";
                 }
             }
     }   
-    //Lekérdezés
-
-    $sql = "SELECT * FROM foglalas ORDER BY fazon DESC limit 6";
-    $request = $db->query($sql);
     
 ?>
 
