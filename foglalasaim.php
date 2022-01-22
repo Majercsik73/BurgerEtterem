@@ -2,10 +2,6 @@
     include("dbconnect.php");
     session_start();
 
-    /*echo "Az alábbi adatokkal vagy itt: <br />";
-    echo "<pre>";
-    print_r($_SESSION);
-    echo "</pre>";*/
     //Lekérdezés
     $azon = $_SESSION['Azonosito'];
     //echo $azon;
@@ -25,7 +21,7 @@
         <link rel="stylesheet" href="css/style.css">
         <title>Burger Étterem</title>
     </head>
-    <body class="container bg-warning">
+    <body class="container bg-dark">
         <header>
             <img src="images/hatter/DSC_0921-Copy-1002x666.jpg" alt="étterem-háttér">
 
@@ -39,35 +35,42 @@
         <br />
         <div class="container">
             <div class="ujfelhasznalo">
+                <form action= "">
                 <div>
                     <h2>Kedves <?php echo $_SESSION['Felhasznalonev']?> !</h2>
                     <h3>Éttermünkben az alábbi foglalásaid voltak korábban:</h3>
                 </div>
                 <br />
-                <table>
-                    <thead style="font-weight:bold">
-                        <tr>
-                            <td>Személyek száma</td>
-                            <td>Dátum</td>
-                            <td>Időpont</td>
-                            <td>Foglalás ideje</td>
-                        </tr>
-                    </thead>
-                    <?php
-                        while ($sor = $request->fetch_assoc()){
-                            echo
-                            "<tr>
-                                <td>".$sor["szemelydb"]."</td>
-                                <td>".$sor["datum"]."</td>
-                                <td>".$sor["idopont"]."</td>
-                                <td>".$sor["ido"]."</td>
-                            </tr>";
-                        }
-                    ?>
-                </table>
-                <br />
-                <br />
-                <a class="btn btn-danger" href="foglalas.php">Vissza a foglalásokhoz</a>
+                <div>
+                    <table class="table table-dark table-striped">
+                        <thead style="font-weight:bold">
+                            <tr>
+                                <th>Személyek száma</th>
+                                <th>Dátum</th>
+                                <th>Időpont</th>
+                                <th>Foglalás ideje</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                                while ($sor = $request->fetch_assoc()){
+                                    echo
+                                    "<tr>
+                                        <td>".$sor["szemelydb"]."</td>
+                                        <td>".$sor["datum"]."</td>
+                                        <td>".$sor["idopont"]."</td>
+                                        <td>".$sor["ido"]."</td>
+                                    </tr>";
+                                }
+                            ?>
+                        </tbody>
+                    </table>
+                </div>
+                <br /><label class="labella"></label><br />
+                <div>
+                    <a class="btn btn-danger" href="foglalas.php">Vissza a foglalásokhoz</a>
+                </div>
+                </form>
             </div>
         </div>
         <br />

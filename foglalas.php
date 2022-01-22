@@ -86,12 +86,12 @@
             <div class="ujfelhasznalo">
                 <form method="POST" action= "">
                     <div>
-                        <h1> Üdvözöljük <?php echo " ".$_SESSION['Felhasznalonev']//."  ".$_SESSION['Azonosito'] ?> !</h1>
-                        <h2> Foglalásához kérjük adja meg a személyek számát, a dátumot és az időpontot!</h2>
+                        <h2> Üdvözöljük <?php echo " ".$_SESSION['Felhasznalonev']//."  ".$_SESSION['Azonosito'] ?> !</h2>
+                        <h3> Foglalásához kérjük adja meg a vendégek számát, a dátumot és az időpontot!</h3>
                     </div>
-                    <br><label class="labella"></label><br />
+                    <br /><label class="labella"></label><br />
                     <div>
-                        <label class="labella">Személyek száma:</label><br />
+                        <label class="labella">Vendégek száma:</label><br />
                         <select class="bevitel" name="szemelydb">
                             <option>1</option>
                             <option>2</option>
@@ -105,7 +105,7 @@
                     </div>
                     <div>
                         <label class="labella">Dátum: </label><br />
-                        <input type="date" class="bevitel" name="datum"><br />
+                        <input type="date" class="bevitel" name="datum">
                     </div>
                     <div>
                         <label class="labella">Időpont:</label><br />

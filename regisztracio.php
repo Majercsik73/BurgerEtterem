@@ -49,11 +49,11 @@
                     (null, '$nev','$lak','$tel','$email', 0 ,'$hashpw'); ";
                     
                     $request = $db->query($sql4);
-                    session_unset();
+                    //session_unset();
                     echo "<script>alert('Köszönjük a regisztrációt!')</script>";
 
                     header("Refresh:0");  //header("index.php");  // Ne ragadjonak be az adatok!!!!
-                    echo "<script>location.href='index.php'</script>";
+                    echo "<script>location.href='foglalas.php'</script>";
                 }  
             }
     }
@@ -90,10 +90,9 @@
         <br />
         <div class="container">
             <div class="ujfelhasznalo">
-                
                 <form name="regist" method = "POST" action="" onsubmit="return formEllenorzes()">
                     <div>
-                        <h2>Regisztráció<h2> <!--<label class="labella">Regisztráció</label><br />-->
+                        <h2>Regisztráció<h2>
                     </div>
                     <div>
                         <label class="labella">Név:</label><br />
